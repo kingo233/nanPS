@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>nanPS</string>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item row="0" column="2" alignment="Qt::AlignRight">
+     <widget class="QScrollBar" name="verticalScrollBar">
+      <property name="maximum">
+       <number>2000</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1" alignment="Qt::AlignBottom">
+     <widget class="QScrollBar" name="horizontalScrollBar">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="maximum">
+       <number>2000</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>文件 </string>
+    </property>
+    <addaction name="openfile"/>
+    <addaction name="saveas"/>
+    <addaction name="profile"/>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>灰度变换</string>
+    </property>
+    <addaction name="gray"/>
+    <addaction name="Histogram"/>
+    <addaction name="Histogram_Equalize"/>
+    <addaction name="HSI_Histogram_Equalize"/>
+    <addaction name="separator"/>
+    <addaction name="Gradient_sharpen"/>
+    <addaction name="Edge_detection"/>
+    <addaction name="separator"/>
+    <addaction name="Image_segmentation"/>
+    <addaction name="Maximum_entropy_segmentation"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>几何变换</string>
+    </property>
+    <addaction name="translate"/>
+    <addaction name="separator"/>
+    <addaction name="Horizontal_Mirror"/>
+    <addaction name="Vertical_Mirror"/>
+    <addaction name="separator"/>
+    <addaction name="Rotate"/>
+    <addaction name="separator"/>
+    <addaction name="Shrink"/>
+    <addaction name="Enlarge"/>
+    <addaction name="separator"/>
+    <addaction name="Horizontal_Shear"/>
+    <addaction name="Vertical_Shear"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>滤波</string>
+    </property>
+    <addaction name="avg_filter"/>
+    <addaction name="high_freq_filter"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>噪声</string>
+    </property>
+    <addaction name="Add_Gaussian_Noise"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_4"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="openfile">
+   <property name="text">
+    <string>打开</string>
+   </property>
+  </action>
+  <action name="gray">
+   <property name="text">
+    <string>灰度化</string>
+   </property>
+  </action>
+  <action name="saveas">
+   <property name="text">
+    <string>另存为</string>
+   </property>
+  </action>
+  <action name="profile">
+   <property name="text">
+    <string>图片属性</string>
+   </property>
+  </action>
+  <action name="translate">
+   <property name="text">
+    <string>平移</string>
+   </property>
+  </action>
+  <action name="Horizontal_Mirror">
+   <property name="text">
+    <string>水平镜像</string>
+   </property>
+  </action>
+  <action name="Vertical_Mirror">
+   <property name="text">
+    <string>垂直镜像</string>
+   </property>
+  </action>
+  <action name="Rotate">
+   <property name="text">
+    <string>旋转</string>
+   </property>
+  </action>
+  <action name="Shrink">
+   <property name="text">
+    <string>缩小</string>
+   </property>
+   <property name="toolTip">
+    <string>缩小</string>
+   </property>
+  </action>
+  <action name="Enlarge">
+   <property name="text">
+    <string>放大</string>
+   </property>
+   <property name="toolTip">
+    <string>放大</string>
+   </property>
+  </action>
+  <action name="Horizontal_Shear">
+   <property name="text">
+    <string>横向错切</string>
+   </property>
+   <property name="toolTip">
+    <string>横向错切</string>
+   </property>
+  </action>
+  <action name="Vertical_Shear">
+   <property name="text">
+    <string>纵向错切</string>
+   </property>
+   <property name="toolTip">
+    <string>纵向错切</string>
+   </property>
+  </action>
+  <action name="Histogram">
+   <property name="text">
+    <string>直方图</string>
+   </property>
+   <property name="toolTip">
+    <string>直方图</string>
+   </property>
+  </action>
+  <action name="Histogram_Equalize">
+   <property name="text">
+    <string>直方图均衡</string>
+   </property>
+   <property name="toolTip">
+    <string>直方图均衡</string>
+   </property>
+  </action>
+  <action name="HSI_Histogram_Equalize">
+   <property name="text">
+    <string>基于HSI的直方图均衡</string>
+   </property>
+   <property name="toolTip">
+    <string>基于HSI的直方图均衡</string>
+   </property>
+  </action>
+  <action name="avg_filter">
+   <property name="text">
+    <string>均值滤波</string>
+   </property>
+   <property name="toolTip">
+    <string>均值滤波</string>
+   </property>
+  </action>
+  <action name="high_freq_filter">
+   <property name="text">
+    <string>高通滤波</string>
+   </property>
+   <property name="toolTip">
+    <string>高通滤波</string>
+   </property>
+  </action>
+  <action name="Gradient_sharpen">
+   <property name="text">
+    <string>梯度锐化</string>
+   </property>
+   <property name="toolTip">
+    <string>梯度锐化</string>
+   </property>
+  </action>
+  <action name="Edge_detection">
+   <property name="text">
+    <string>边缘检测</string>
+   </property>
+   <property name="toolTip">
+    <string>边缘检测</string>
+   </property>
+  </action>
+  <action name="Image_segmentation">
+   <property name="text">
+    <string>图像分割(二值化)</string>
+   </property>
+   <property name="toolTip">
+    <string>图像分割</string>
+   </property>
+  </action>
+  <action name="Add_Gaussian_Noise">
+   <property name="text">
+    <string>添加高斯噪声</string>
+   </property>
+   <property name="toolTip">
+    <string>添加高斯噪声</string>
+   </property>
+  </action>
+  <action name="Maximum_entropy_segmentation">
+   <property name="text">
+    <string>最大熵阈值分割</string>
+   </property>
+   <property name="toolTip">
+    <string>最大熵阈值分割</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
